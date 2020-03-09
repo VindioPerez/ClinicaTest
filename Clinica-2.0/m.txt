@@ -1,0 +1,58 @@
+ /**
+     * 
+     * @param path es el parametro del archivo binario que se ira ha escribir.
+     * @exception FileNotFoundException si no se encuentra el fichero.
+     * @exception IOException excepciones que se producen mientras se tiene acceso a la información mediante secuencias, archivos y directorios.
+     * @exception Exception es aquella general.
+     */
+
+   /**
+     * 
+     * @param id es el id del pago <code>long</code> .
+     * @param idPaciente es el id del Paciente que realiza el pago<code>long</code> .
+     * @param idCobro es el id del Cobro al que pertenece el pago<code>long</code> .
+     * @param fechadePago es la fecha del pago <code>Date</code> .
+     * @param importe Es el importe del pago <code>double</code> .
+     * @param metododePago Es el metodo de pago <code>char</code> .
+     */
+
+    /**
+     * 
+     * @param id es el id del pago <code>long</code> .
+     * @param idPaciente es el id del Paciente que realiza el pago<code>long</code> .
+     * @param idCobro es el id del Cobro al que pertenece el pago<code>long</code> .
+     * @param fechadePago es la fecha del pago <code>Date</code> .
+     * @param importe Es el importe del pago <code>double</code> .
+     * @param metododePago Es el metodo de pago <code>char</code> .
+     */
+
+    /**
+     * 
+     * @param p s el parametro de Pago que nos vale para hacer el constructor de copia.
+     */
+
+    /**
+     * 
+     * @return devuelve un String de Id fechadePago , importe y metodo de pago .
+     */
+
+    /**
+     * 
+     * @return  devuelve los datos de Pago en orden más el id de Paciente y Cobro que son <code>long</code>.
+     */
+
+    /**
+     * 
+     * @return devuelve todos los pagos  que existen en el sistema.
+     */
+
+    /**
+     * 
+     * @param id es el identificador de la clase Pago.Cada Pago tiene su propio identificador.
+     * @return devuelve el pago en la que coincida el id .
+     */
+
+    /**
+     * 
+     * @return devuelve un pago nuevo
+     */
