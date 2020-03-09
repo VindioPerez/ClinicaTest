@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package clinicatest;
 
 import org.junit.After;
 import org.junit.AfterClass;
