@@ -5,7 +5,10 @@
  */
 package clinica;
 
+import excepciones.PacienteException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,6 +21,8 @@ import static org.junit.Assert.*;
  * @author DAW107
  */
 public class PacienteTest {
+    Paciente pac1 = null;
+    Paciente pac2 = null;
     
     public PacienteTest() {
     }
@@ -32,6 +37,9 @@ public class PacienteTest {
     
     @Before
     public void setUp() {
+        pac1 = new Paciente();
+        Historial h = null;
+        pac2 = new Paciente(h, 1, 1, "Pedro", "Perez Perez", "12345678A", "666666666", "cerca");
     }
     
     @After
@@ -39,30 +47,60 @@ public class PacienteTest {
     }
 
     /**
-     * Test of getIdHistorial method, of class Paciente.
+     * Prueba del metodo getIdHistorial de Paciente, con valores por defecto
      */
     @Test
-    public void testGetIdHistorial() {
+    public void testGetIdHistorial001() {
         System.out.println("getIdHistorial");
-        Paciente instance = new Paciente();
-        long expResult = 0L;
-        long result = instance.getIdHistorial();
+        long expResult = 0;
+        long result = pac1.getIdHistorial();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Prueba del metodo getIdHistorial de Paciente, con valor inicializado a 1
+     */
+    @Test
+    public void testGetIdHistorial002() {
+        System.out.println("getIdHistorial");
+        long expResult = 1;
+        long result = pac2.getIdHistorial();
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of setIdHistorial method, of class Paciente.
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente valido (entero largo positivo)
      */
     @Test
-    public void testSetIdHistorial() {
+    public void testSetIdHistorial001() {
         System.out.println("setIdHistorial");
-        long idHistorial = 0L;
-        Paciente instance = new Paciente();
-        instance.setIdHistorial(idHistorial);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long idHistorial = 10;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+    }
+    
+    /**
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente invalido (0)
+     */
+    @Test
+    public void testSetIdHistorial002() {
+        System.out.println("setIdHistorial");
+        long idHistorial = 0;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+        fail("Se esperaba una excepcion");
+    }
+    
+    /**
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente invalido (entero largo negativo)
+     */
+    @Test
+    public void testSetIdHistorial003() {
+        System.out.println("setIdHistorial");
+        long idHistorial = -10;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+        fail("Se esperaba una excepcion");
     }
 
     /**
