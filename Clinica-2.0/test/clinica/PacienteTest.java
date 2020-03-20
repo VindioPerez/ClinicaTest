@@ -107,167 +107,370 @@ public class PacienteTest {
      * Test of getId method, of class Paciente.
      */
     @Test
-    public void testGetId() {
+    public void testGetId001() {
         System.out.println("getId");
-        Paciente instance = new Paciente();
-        long expResult = 0L;
-        long result = instance.getId();
+        long expResult = 0;
+        long result = pac1.getIdHistorial();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of getId method, of class Paciente.
+     */
+    @Test
+    public void testGetId002() {
+        System.out.println("getId");
+        long expResult = 1;
+        long result = pac1.getIdHistorial();
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of setId method, of class Paciente.
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente valido (entero largo positivo)
      */
     @Test
-    public void testSetId() {
-        System.out.println("setId");
-        long idPaciente = 0L;
-        Paciente instance = new Paciente();
-        instance.setId(idPaciente);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSetId001() {
+        System.out.println("setIdHistorial");
+        long idHistorial = 10;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+    }
+    
+    /**
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente invalido (0)
+     */
+    @Test
+    public void testSetId002() {
+        System.out.println("setIdHistorial");
+        long idHistorial = 0;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+        fail("Se esperaba una excepcion");
+    }
+    
+    /**
+     * Prueba del metodo setIdHistorial de Paciente, con un valor teoricamente invalido (entero largo negativo)
+     */
+    @Test
+    public void testSetId003() {
+        System.out.println("setIdHistorial");
+        long idHistorial = -10;
+        pac1.setIdHistorial(idHistorial);
+        assertEquals(idHistorial, pac1.getIdHistorial());
+        fail("Se esperaba una excepcion");
     }
 
     /**
      * Test of getNombre method, of class Paciente.
      */
     @Test
-    public void testGetNombre() {
+    public void testGetNombre001() {
         System.out.println("getNombre");
-        Paciente instance = new Paciente();
         String expResult = "";
-        String result = instance.getNombre();
+        String result = pac1.getNombre();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getNombre method, of class Paciente.
+     */
+    @Test
+    public void testGetNombre002() {
+        System.out.println("getNombre");
+        String expResult = "Pedro";
+        String result = pac1.getNombre();
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of setNombre method, of class Paciente.
      */
     @Test
-    public void testSetNombre() {
+    public void testSetNombre001() {
         System.out.println("setNombre");
-        String nombre = "";
-        Paciente instance = new Paciente();
-        instance.setNombre(nombre);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String nombre = "Luis";
+        pac1.setNombre(nombre);
+        assertEquals(nombre, pac1.getNombre());
+    }
+
+    /**
+     * Test of setNombre method, of class Paciente.
+     */
+    @Test
+    public void testSetNombre002() {
+        System.out.println("setNombre");
+        String nombre = "1234";
+        pac1.setNombre(nombre);
+        assertEquals(nombre, pac1.getNombre());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setNombre method, of class Paciente.
+     */
+    @Test
+    public void testSetNombre003() {
+        System.out.println("setNombre");
+        String nombre = "*+^¨$";
+        pac1.setNombre(nombre);
+        assertEquals(nombre, pac1.getNombre());
+        fail("Se esperaba una excepcion");
     }
 
     /**
      * Test of getApellidos method, of class Paciente.
      */
     @Test
-    public void testGetApellidos() {
+    public void testGetApellidos001() {
         System.out.println("getApellidos");
-        Paciente instance = new Paciente();
         String expResult = "";
-        String result = instance.getApellidos();
+        String result = pac1.getApellidos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getApellidos method, of class Paciente.
+     */
+    @Test
+    public void testGetApellidos002() {
+        System.out.println("getApellidos");
+        String expResult = "Perez Perez";
+        String result = pac2.getApellidos();
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of setApellidos method, of class Paciente.
      */
     @Test
-    public void testSetApellidos() {
+    public void testSetApellidos001() {
         System.out.println("setApellidos");
-        String apellidos = "";
-        Paciente instance = new Paciente();
-        instance.setApellidos(apellidos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String apellidos = "Gonzalez Gonzalez";
+        pac1.setApellidos(apellidos);
+        assertEquals(apellidos, pac1.getApellidos());
+    }
+
+    /**
+     * Test of setApellidos method, of class Paciente.
+     */
+    @Test
+    public void testSetApellidos002() {
+        System.out.println("setApellidos");
+        String apellidos = "1234";
+        pac1.setApellidos(apellidos);
+        assertEquals(apellidos, pac1.getApellidos());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setApellidos method, of class Paciente.
+     */
+    @Test
+    public void testSetApellidos003() {
+        System.out.println("setApellidos");
+        String apellidos = "*+^¨$";
+        pac1.setApellidos(apellidos);
+        assertEquals(apellidos, pac1.getApellidos());
+        fail("Se esperaba una excepcion");
     }
 
     /**
      * Test of getNIF method, of class Paciente.
      */
     @Test
-    public void testGetNIF() {
+    public void testGetNIF001() {
         System.out.println("getNIF");
-        Paciente instance = new Paciente();
         String expResult = "";
-        String result = instance.getNIF();
+        String result = pac1.getNIF();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getNIF method, of class Paciente.
+     */
+    @Test
+    public void testGetNIF002() {
+        System.out.println("getNIF");
+        String expResult = "12345678A";
+        String result = pac2.getNIF();
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of setNIF method, of class Paciente.
      */
     @Test
-    public void testSetNIF() {
+    public void testSetNIF001() {
         System.out.println("setNIF");
-        String NIF = "";
-        Paciente instance = new Paciente();
-        instance.setNIF(NIF);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String NIF = "98765432Z";
+        pac1.setNIF(NIF);
+        assertEquals(NIF, pac1.getNIF());
+    }
+
+    /**
+     * Test of setNIF method, of class Paciente.
+     */
+    @Test
+    public void testSetNIF002() {
+        System.out.println("setNIF");
+        String NIF = "98765432";
+        pac1.setNIF(NIF);
+        assertEquals(NIF, pac1.getNIF());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setNIF method, of class Paciente.
+     */
+    @Test
+    public void testSetNIF003() {
+        System.out.println("setNIF");
+        String NIF = "Hola";
+        pac1.setNIF(NIF);
+        assertEquals(NIF, pac1.getNIF());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setNIF method, of class Paciente.
+     */
+    @Test
+    public void testSetNIF004() {
+        System.out.println("setNIF");
+        String NIF = "999999999";
+        pac1.setNIF(NIF);
+        assertEquals(NIF, pac1.getNIF());
+        fail("Se esperaba una excepcion");
     }
 
     /**
      * Test of getTelefono method, of class Paciente.
      */
     @Test
-    public void testGetTelefono() {
+    public void testGetTelefono001() {
         System.out.println("getTelefono");
-        Paciente instance = new Paciente();
         String expResult = "";
-        String result = instance.getTelefono();
+        String result = pac1.getTelefono();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getTelefono method, of class Paciente.
+     */
+    @Test
+    public void testGetTelefono002() {
+        System.out.println("getTelefono");
+        String expResult = "666666666";
+        String result = pac2.getTelefono();
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of setTelefono method, of class Paciente.
      */
     @Test
-    public void testSetTelefono() {
+    public void testSetTelefono001() {
         System.out.println("setTelefono");
-        String telefono = "";
-        Paciente instance = new Paciente();
-        instance.setTelefono(telefono);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String telefono = "633456456";
+        pac1.setTelefono(telefono);
+        assertEquals(telefono, pac1.getTelefono());
+    }
+
+    /**
+     * Test of setTelefono method, of class Paciente.
+     */
+    @Test
+    public void testSetTelefono002() {
+        System.out.println("setTelefono");
+        String telefono = "Hola";
+        pac1.setTelefono(telefono);
+        assertEquals(telefono, pac1.getTelefono());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setTelefono method, of class Paciente.
+     */
+    @Test
+    public void testSetTelefono003() {
+        System.out.println("setTelefono");
+        String telefono = "656465";
+        pac1.setTelefono(telefono);
+        assertEquals(telefono, pac1.getTelefono());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setTelefono method, of class Paciente.
+     */
+    @Test
+    public void testSetTelefono004() {
+        System.out.println("setTelefono");
+        String telefono = "945623216454213";
+        pac1.setTelefono(telefono);
+        assertEquals(telefono, pac1.getTelefono());
+        fail("Se esperaba una excepcion");
+    }
+
+    /**
+     * Test of setTelefono method, of class Paciente.
+     */
+    @Test
+    public void testSetTelefono005() {
+        System.out.println("setTelefono");
+        String telefono = "355645987";
+        pac1.setTelefono(telefono);
+        assertEquals(telefono, pac1.getTelefono());
+        fail("Se esperaba una excepcion");
     }
 
     /**
      * Test of getDireccion method, of class Paciente.
      */
     @Test
-    public void testGetDireccion() {
+    public void testGetDireccion001() {
         System.out.println("getDireccion");
-        Paciente instance = new Paciente();
         String expResult = "";
-        String result = instance.getDireccion();
+        String result = pac1.getDireccion();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getDireccion method, of class Paciente.
+     */
+    @Test
+    public void testGetDireccion002() {
+        System.out.println("getDireccion");
+        String expResult = "cerca";
+        String result = pac2.getDireccion();
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of setDireccion method, of class Paciente.
      */
     @Test
-    public void testSetDireccion() {
+    public void testSetDireccion001() {
         System.out.println("setDireccion");
-        String direccion = "";
-        Paciente instance = new Paciente();
-        instance.setDireccion(direccion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String direccion = "lejos";
+        pac1.setDireccion(direccion);
+        assertEquals(direccion, pac1.getDireccion());
     }
 
     /**
-     * Test of readPacientefromTextFile method, of class Paciente.
+     * Test of setDireccion method, of class Paciente.
      */
+    @Test
+    public void testSetDireccion002() {
+        System.out.println("setDireccion");
+        String direccion = "";
+        pac1.setDireccion(direccion);
+        assertEquals(direccion, pac1.getDireccion());
+        fail("Se esperaba una excepcion");
+    }
+
+    /*
+    Dejo este metodo de prueba comentado porque no se muy bien contra que podria contrastar el paciente que se importa al no tener un .txt valido disponible
     @Test
     public void testReadPacientefromTextFile() {
         System.out.println("readPacientefromTextFile");
@@ -278,10 +481,9 @@ public class PacienteTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of readClientefromBinaryFile method, of class Paciente.
-     */
+    */
+    /*
+    Dejo este metodo de prueba comentado porque no se muy bien contra que podria contrastar el paciente que se importa al no tener un .dat valido disponible
     @Test
     public void testReadClientefromBinaryFile() {
         System.out.println("readClientefromBinaryFile");
@@ -289,9 +491,8 @@ public class PacienteTest {
         ArrayList<Paciente> expResult = null;
         ArrayList<Paciente> result = Paciente.readClientefromBinaryFile(path);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+    */
 
     /**
      * Test of toTextFile method, of class Paciente.
@@ -299,11 +500,10 @@ public class PacienteTest {
     @Test
     public void testToTextFile() {
         System.out.println("toTextFile");
-        String path = "";
-        Paciente instance = new Paciente();
-        instance.toTextFile(path);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String path = "paciente.txt";
+        pac2.toTextFile(path);
+        Paciente pac2 = Paciente.readPacientefromTextFile("paciente.txt").get(0);
+        assertEquals(pac1, pac2);
     }
 
     /**
@@ -312,11 +512,10 @@ public class PacienteTest {
     @Test
     public void testWriteClienteToBinaryFile() throws Exception {
         System.out.println("writeClienteToBinaryFile");
-        String path = "";
-        Paciente instance = new Paciente();
-        instance.writeClienteToBinaryFile(path);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String path = "paciente.dat";
+        pac2.writeClienteToBinaryFile(path);
+        Paciente pac2 = Paciente.readClientefromBinaryFile("paciente.dat").get(0);
+        assertEquals(pac1, pac2);
     }
 
     /**
@@ -325,12 +524,9 @@ public class PacienteTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Paciente instance = new Paciente();
-        String expResult = "";
-        String result = instance.toString();
+        String expResult = "Paciente(ID=1, nombre=Pedro, apellidos=Perez Perez, NIF=12345678A, telefono=666666666, direccion=cerca)";
+        String result = pac2.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -339,31 +535,24 @@ public class PacienteTest {
     @Test
     public void testData() {
         System.out.println("data");
-        Paciente instance = new Paciente();
-        String expResult = "";
-        String result = instance.data();
+        String expResult = "1|Pedro|Perez Perez|12345678A|666666666|cerca|1";
+        String result = pac2.data();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getAllPaciente method, of class Paciente.
-     */
+    /*
+    Metodo sin funcionalidad implementada aun
     @Test
     public void testGetAllPaciente() {
         System.out.println("getAllPaciente");
-        Paciente instance = new Paciente();
         ArrayList<Paciente> expResult = null;
-        ArrayList<Paciente> result = instance.getAllPaciente();
+        ArrayList<Paciente> result = pac1.getAllPaciente();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+    ^/
 
-    /**
-     * Test of getPacienteById method, of class Paciente.
-     */
+    /*
+    Metodo sin funcionalidad implementada aun
     @Test
     public void testGetPacienteById() {
         System.out.println("getPacienteById");
@@ -375,10 +564,10 @@ public class PacienteTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    */
 
-    /**
-     * Test of nuevoPaciente method, of class Paciente.
-     */
+    /*
+    Requiere entrada de datos por pantalla
     @Test
     public void testNuevoPaciente() {
         System.out.println("nuevoPaciente");
@@ -388,10 +577,10 @@ public class PacienteTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    */
 
-    /**
-     * Test of realizarPago method, of class Paciente.
-     */
+    /*
+    Requiere de entrada de datos por pantalla
     @Test
     public void testRealizarPago() {
         System.out.println("realizarPago");
@@ -403,5 +592,6 @@ public class PacienteTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    */
     
 }
